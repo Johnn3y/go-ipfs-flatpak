@@ -1,0 +1,27 @@
+{
+  "id" : "io.ipfs.dist.go-ipfs",
+  "runtime" : "org.freedesktop.Platform",
+  "runtime-version" : "18.08",
+  "sdk" : "org.freedesktop.Sdk",
+  "command" : "ipfs",
+  "modules" : [
+    {
+      "name" : "go-ipfs",
+      "buildsystem" : "simple",
+      "sources" : [
+        {
+          "url" : "https://dist.ipfs.io/go-ipfs/v0.4.20/go-ipfs_v0.4.20_linux-amd64.tar.gz",
+          "sha256" : "155dbdb2d7a9b8df38feccf48eb925cf9ab650754dc51994aa1e0bda1c1f9123",
+          "type" : "archive"
+        }
+      ],
+      "build-commands" : [
+        "install -D ipfs /app/bin/ipfs"
+      ]
+    }
+  ],
+  "finish-args" : [
+    "--share=network",
+    "--filesystem=home"
+  ]
+}
