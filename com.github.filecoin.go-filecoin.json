@@ -1,0 +1,27 @@
+{
+  "id" : "com.github.filecoin.go-filecoin",
+  "runtime" : "org.freedesktop.Platform",
+  "runtime-version" : "18.08",
+  "sdk" : "org.freedesktop.Sdk",
+  "command" : "go-filecoin",
+  "modules" : [
+    {
+      "name" : "filecoin",
+      "buildsystem" : "simple",
+      "sources" : [
+        {
+          "url" : "https://github.com/filecoin-project/go-filecoin/releases/download/0.3.2/filecoin-0.3.2-Linux.tar.gz",
+          "sha256" : "2a8cfaa566d13295c23cda9debac716d2f0560dcb6afeea5bdb092e6e02f8c56",
+          "type" : "archive"
+        }
+      ],
+      "build-commands" : [
+        "install -D go-filecoin /app/bin/go-filecoin"
+      ]
+    }
+  ],
+  "finish-args" : [
+    "--share=network",
+    "--filesystem=home"
+  ]
+}
